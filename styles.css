@@ -1,0 +1,195 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #000;
+}
+
+a {
+  color: #0077ff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #0ff;
+}
+
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin: 0;
+  padding: 0;
+  margin-left: 2rem;
+}
+
+nav a {
+  position: relative;
+  display: block;
+  padding: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0ff;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0077ff;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+section li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0062cc;
+}
+/* terminal */
+
+#terminal {
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  height: 300px;
+  overflow: auto;
+  padding: 10px;
+}
+
+#terminal-input {
+  display: flex;
+  align-items: center;
+}
+
+#terminal-prompt {
+  color: green;
+}
+
+#terminal-command {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: monospace;
+  font-size: inherit;
+  margin-left: 5px;
+  outline: none;
+  width: 100%;
+}
+input {
+  border: 2px solid #0077ff;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1.1rem;
+  color: #000;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0ff;
+}
+#hide-text {
+  color: lightslategray;
+  cursor: pointer;
+  text-decoration: none;
+}
