@@ -1,214 +1,177 @@
-/* Global styles */
-body {
-  margin: 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #fff;
-  background-color: #000;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Social Accounts</title>
+    <link rel="stylesheet" href="Socialstyles.css" />
+    <script>
+      // Get all the sparkle elements
+      const sparkles = document.querySelectorAll(".sparkle");
 
-a {
-  color: #0077ff;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
+      // Loop through the sparkles and set a random value for --x and --y
+      sparkles.forEach((sparkle) => {
+        sparkle.style.setProperty("--x", Math.random());
+        sparkle.style.setProperty("--y", Math.random());
+      });
+    </script>
+  </head>
+  <body>
+    <header class="sparkle">
+      <div class="box">
+        <h1 id="header-text">My Social Accounts</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#socials">go to socials</a></li>
+          <li>
+            <a
+              href="https://discord.gg/your-server-invite-link"
+              target="_blank"
+              rel="noopener"
+              id="join_discord"
+              >Join Discord</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="socials">
+      <main>
+        <section id="discord">
+          <h2>Discord</h2>
+          <div class="social-box">
+            <a
+              href="https://discord.gg/7qKPBM3bvm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-1-1.png"
+                alt="Discord Logo"
+              />
+              <span>Join Our Discord Server</span>
+            </a>
+          </div>
+        </section>
+        <section id="telegram">
+          <h2>Telegram</h2>
+          <div class="social-box">
+            <a
+              href="https://t.me/francescoserangeli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://www.telegram.org/img/t_logo.png"
+                alt="Telegram Logo"
+              />
+              <span>@FrancescoSerangeli</span>
+            </a>
+          </div>
+        </section>
+        <section id="github">
+          <h2>Github</h2>
+          <div class="social-box">
+            <a
+              href="https://github.com/WilliamAerus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                alt="Github Logo"
+              />
+              <span>@WilliamAerus</span>
+            </a>
+            <a
+              href="https://github.com/YoungPlaceHolder"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>@YoungPlaceHolder</span>
+            </a>
+          </div>
+        </section>
+        <section id="twitter">
+          <h2>Twitter</h2>
+          <div class="social-box">
+            <a
+              href="https://twitter.com/fortcraft2_1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-6.png"
+                alt="Twitter Logo"
+                height="15px"
+                width="auto"
+              />
+              <span>@fortcraft2_1</span>
+            </a>
+          </div>
+        </section>
+        <section id="tiktok">
+          <h2>TikTok</h2>
+          <div class="social-box">
+            <a
+              href="https://www.tiktok.com/@fortcraft21.0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://static.vecteezy.com/ti/vettori-gratis/p3/6057996-tiktok-logo-su-sfondo-trasparente-gratuito-vettoriale.jpg"
+                height="15px"
+                width="auto"
+              />
+              <span>@fortcraft21.0</span></a
+            >
+          </div>
+        </section>
+        <section id="instagram">
+          <h2>Instagram</h2>
+          <div class="social-box">
+            <a
+              href="https://www.instagram.com/Francesco.serangeli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
+                alt="Instagram Logo"
+                height="15px"
+                width="auto"
+              />
+              <span>@fortcraft21.0</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <span>Copyright © My Social Accounts</span>
+    </footer>
+    <script>
+      // get the "go to socials" link element
+      const goToSocialsLink = document.querySelector('a[href="#socials"]');
 
-a:hover {
-  color: #0ff;
-}
+      // add a click event listener to the link
+      goToSocialsLink.addEventListener("click", (event) => {
+        // prevent the default link behavior
+        event.preventDefault();
 
-header {
-  width: 100%;
-  background-color: #333;
-  background-image: url("https://thenewcode.com/assets/images/final-starfield.png");
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  height: 100vh;
-  background-color: #111;
-  color: #fff;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: url("img/custom-cursor.png"), auto;
-}
+        // get the target element (the #socials section)
+        const target = document.getElementById("socials");
 
-nav {
-  display: flex;
-  align-items: center;
-}
+        // calculate the target's offset from the top of the document
+        const offset = target.getBoundingClientRect().top + window.pageYOffset;
 
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-}
-
-nav li {
-  margin: 0;
-  padding: 0;
-  margin-left: 2rem;
-}
-
-nav a {
-  position: relative;
-  display: block;
-  padding: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: 0.2s ease-in-out;
-}
-
-nav a:hover {
-  color: #0ff;
-  transform: scale(1.05);
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #0077ff;
-  transform: scaleX(0);
-  transition: transform 0.2s ease-in-out;
-}
-
-nav a:hover::after {
-  transform: scaleX(1);
-}
-
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-section {
-  margin-bottom: 4rem;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-section p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-section ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-section li {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-footer {
-  background-color: #111;
-  color: #fff;
-  padding: 2rem;
-  text-align: center;
-  font-size: 1.1rem;
-  cursor: url("img/custom-cursor.png") 32 32, auto;
-  background-repeat: no-repeat;
-  background-size: 40px;
-  background-image: url(img/custom-cursor.png);
-  animation: move-bg 10s linear infinite;
-}
-footer span {
-  background-color: #111;
-  padding: 20px;
-}
-
-@keyframes move-bg {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
-}
-#header-text {
-  transition: transform 0.006s ease-in-out, color 1s ease-in-out,
-    border 1s ease-in-out, background 0.5s ease-in-out;
-  border: transparent;
-}
-#header-text:hover {
-  transform: scale(1.05);
-  color: #007bff;
-  border: 2px solid rgba(0, 136, 255, 0.241);
-  background-color: rgba(0, 136, 255, 0.075);
-  cursor: pointer;
-}
-/* Media queries */
-
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav li {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-}
-#join_discord {
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 24px;
-  transition: 0.2s ease-in-out;
-  text-decoration: none;
-}
-
-#join_discord:hover {
-  transform: scale(1.05);
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: transparent;
-  border: 3px solid #0077ff;
-}
-
-/* Button styles */
-button {
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 24px;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: transparent;
-  border: 1px #0077ff;
-}
-
-img {
-  height: 15px;
-  width: auto;
-  border-radius: 50%;
-}
+        // use the scrollTo() method to smoothly scroll to the target
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
