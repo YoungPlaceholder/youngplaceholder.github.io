@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>williamaerus</title>
+    <link rel="stylesheet" href="Socialstyles.css" />
+    <script src="terminal.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>My GitHub Profile</h1>
+      <nav>
+        <ul>
+          <li><a href="#data">About</a></li>
+          <li><a href="#repositories">Repositories</a></li>
+          <li><a href="#contributions">Contributions</a></li>
+          <li><button href="./socials/">Socials</button></li>
+
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="data">
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          Hi i'm William, im a 17 years old boy who really likes programming.
+        </p>
+        <p>
+          <button id="button" href="https://github.com/williamaerus/">
+            My GitHub
+          </button>
+        </p>
+      </section>
+      <section id="repositories">
+        <h2>Repositories</h2>
+        <ul>
+          <li>
+            <p><a onclick="toggleContent('content');"
+              >JavaScript Log function</a
+            >
+            <div id="content" style="display: none">
+              <p>
+                <input type="tex" id="input" /><button onclick="log();" >log</button>
+                </button>
+              </p>
+              <div id="output"></div>
+              do you want this? click <a href="https://github.com/williamaerus/logs">here</a><br><font
+                id="hide-text"
+                onclick=" toggleContent('content')"
+                >   hide</font
+              >
+            </div>
+          </li>
+          <li><p>
+            <a href="https://github.com/williamaerus/youtube-downloader-python"
+              >My Python Youtube downloader</a
+            ></p>
+          </li>
+          <li><p>
+            <a href="https://github.com/williamaerus/password-python"
+              >python password locker with hash</a
+            ></p>
+          </li>
+          <!-- Add more repositories as needed -->
+        </ul>
+      </section>
+      <section id="contributions">
+        <h2>Contributions</h2>
+        <p>
+          Unfortunately I still haven't contributed to anything but i promise
+          i'll get right on it asap
+        </p>
+      </section>
+    </div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Francesco Serangeli. All rights reserved.</p>
+    </footer>
+    <script>
+      // get the "go to socials" link element
+      const goToSocialsLink = document.querySelector('a[href="#data"]');
+
+      // add a click event listener to the link
+      goToSocialsLink.addEventListener("click", (event) => {
+        // prevent the default link behavior
+        event.preventDefault();
+
+        // get the target element (the #socials section)
+        const target = document.getElementById("data");
+
+        // calculate the target's offset from the top of the document
+        const offset = target.getBoundingClientRect().top + window.pageYOffset;
+
+        // use the scrollTo() method to smoothly scroll to the target
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth",
+        });
+      });
+    </script>
+        <script>
+          // get the "go to socials" link element
+          const gorepoLink = document.querySelector('a[href="#repositories"]');
+    
+          // add a click event listener to the link
+          gorepoLink.addEventListener("click", (event) => {
+            // prevent the default link behavior
+            event.preventDefault();
+    
+            // get the target element (the #socials section)
+            const target = document.getElementById("repositories");
+    
+            // calculate the target's offset from the top of the document
+            const offset = target.getBoundingClientRect().top + window.pageYOffset;
+    
+            // use the scrollTo() method to smoothly scroll to the target
+            window.scrollTo({
+              top: offset,
+              behavior: "smooth",
+            });
+          });
+        </script>
+                <script>
+                  // get the "go to socials" link element
+                  const gocontriLink = document.querySelector('a[href="#contributions"]');
+            
+                  // add a click event listener to the link
+                  gocontriLink.addEventListener("click", (event) => {
+                    // prevent the default link behavior
+                    event.preventDefault();
+            
+                    // get the target element (the #socials section)
+                    const target = document.getElementById("contributions");
+            
+                    // calculate the target's offset from the top of the document
+                    const offset = target.getBoundingClientRect().top + window.pageYOffset;
+            
+                    // use the scrollTo() method to smoothly scroll to the target
+                    window.scrollTo({
+                      top: offset,
+                      behavior: "smooth",
+                    });
+                  });
+                </script>
+  </body>
+</html>

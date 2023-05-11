@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Social Accounts</title>
+    <link rel="stylesheet" href="Socialstyles.css" />
+
+  </head>
+  <body>
+    <header class="sparkle">
+      <div class="box">
+        <h1 id="header-text">My Social Accounts</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#socials">go to socials</a></li>
+          <li>
+            <a
+              href="https://discord.gg/7qKPBM3bvm"
+              target="_blank"
+              rel="noopener"
+              id="join_discord"
+              >Join Discord</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="socials">
+      <main>
+        <section id="discord">
+          <h2>Discord</h2>
+          <div class="social-box">
+            <a
+              href="https://discord.gg/7qKPBM3bvm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://logodownload.org/wp-content/uploads/2017/11/discord-logo-1-1.png"
+                alt="Discord Logo"
+              />
+              <span>Join Our Discord Server</span>
+            </a>
+          </div>
+        </section>
+        <section id="telegram">
+          <h2>Telegram</h2>
+          <div class="social-box">
+            <a
+              href="https://t.me/francescoserangeli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://www.telegram.org/img/t_logo.png"
+                alt="Telegram Logo"
+              />
+              <span>@FrancescoSerangeli</span>
+            </a>
+          </div>
+        </section>
+        <section id="github">
+          <h2>Github</h2>
+          <div class="social-box">
+            <a
+              href="https://github.com/WilliamAerus"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                alt="Github Logo"
+              />
+              <span>@WilliamAerus</span>
+            </a>
+            <a
+              href="https://github.com/YoungPlaceHolder"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>@YoungPlaceHolder</span>
+            </a>
+          </div>
+        </section>
+        <section id="twitter">
+          <h2>Twitter</h2>
+          <div class="social-box">
+            <a
+              href="https://twitter.com/fortcraft2_1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-6.png"
+                alt="Twitter Logo"
+                height="15px"
+                width="auto"
+              />
+              <span>@fortcraft2_1</span>
+            </a>
+          </div>
+        </section>
+        <section id="tiktok">
+          <h2>TikTok</h2>
+          <div class="social-box">
+            <a
+              href="https://www.tiktok.com/@fortcraft21.0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://static.vecteezy.com/ti/vettori-gratis/p3/6057996-tiktok-logo-su-sfondo-trasparente-gratuito-vettoriale.jpg"
+                height="15px"
+                width="auto"
+              />
+              <span>@fortcraft21.0</span></a
+            >
+          </div>
+        </section>
+        <section id="instagram">
+          <h2>Instagram</h2>
+          <div class="social-box">
+            <a
+              href="https://www.instagram.com/Francesco.serangeli"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
+                alt="Instagram Logo"
+                height="15px"
+                width="auto"
+              />
+              <span>@fortcraft21.0</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <span>Copyright © My Social Accounts</span>
+    </footer>
+    <script>
+      // get the "go to socials" link element
+      const goToSocialsLink = document.querySelector('a[href="#socials"]');
+
+      // add a click event listener to the link
+      goToSocialsLink.addEventListener("click", (event) => {
+        // prevent the default link behavior
+        event.preventDefault();
+
+        // get the target element (the #socials section)
+        const target = document.getElementById("socials");
+
+        // calculate the target's offset from the top of the document
+        const offset = target.getBoundingClientRect().top + window.pageYOffset;
+
+        // use the scrollTo() method to smoothly scroll to the target
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
