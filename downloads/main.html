@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Social Accounts</title>
+    <link
+      rel="stylesheet"
+      href="https://youngplaceholder.github.io/Socialstyles.css"
+    />
+  </head>
+  <body>
+    <header class="sparkle">
+      <div class="box">
+        <h1 id="header-text">Downloads</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#socials">go to Downloads</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="socials">
+      <main>
+        <a               
+        href="phisics/Main.java"
+        target="_blank"
+        rel="noopener noreferrer"
+>
+        <section id="discord">
+          <h2>Phisics</h2>
+          <div class="social-box">
+        </a>    
+
+              <span>a script to help my friends in class</span>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+    <footer>
+      <span>Copyright © My Social Accounts</span>
+    </footer>
+    <script>
+      // get the "go to socials" link element
+      const goToSocialsLink = document.querySelector('a[href="#links"]');
+
+      // add a click event listener to the link
+      goToSocialsLink.addEventListener("click", (event) => {
+        // prevent the default link behavior
+        event.preventDefault();
+
+        // get the target element (the #socials section)
+        const target = document.getElementById("socials");
+
+        // calculate the target's offset from the top of the document
+        const offset = target.getBoundingClientRect().top + window.pageYOffset;
+
+        // use the scrollTo() method to smoothly scroll to the target
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
