@@ -34,12 +34,13 @@ public class Main {
 
         // Create the menu panel
         JPanel menuPanel = new JPanel();
-        menuPanel.setLayout(new GridLayout(3, 1));
+        menuPanel.setLayout(new GridLayout(4, 1));
 
         // Create the buttons for each calculation function
         JButton maxHeightButton = new JButton("Max Height");
         JButton finalVelocityButton = new JButton("Final Velocity");
         JButton displacementButton = new JButton("Displacement");
+        JButton angularVelocityButton = new JButton("Angular Velocity");
 
         // Add ActionListener to each button
         maxHeightButton.addActionListener(new ActionListener() {
@@ -90,10 +91,35 @@ public class Main {
             }
         });
 
+        angularVelocityButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String input = JOptionPane.showInputDialog(null, "Enter the radius:");
+                if (input != null) {
+                    try {
+                        double radius = Double.parseDouble(input);
+                        String input2 = JOptionPane.showInputDialog(null, "Enter the linear velocity:");
+                        if (input2 != null) {
+                            try {
+                                double linearVelocity = Double.parseDouble(input2);
+                                physicsCalculator = new PhysicsCalculator(resultLabel);
+                                physicsCalculator.calculateAngularVelocity(radius, linearVelocity);
+                            } catch (NumberFormatException ex) {
+                                JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+                            }
+                        }
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "Invalid input. Please enter a numeric value.");
+                    }
+                }
+            }
+        });
+
         // Add buttons to the menu panel
         menuPanel.add(maxHeightButton);
         menuPanel.add(finalVelocityButton);
         menuPanel.add(displacementButton);
+        menuPanel.add(angularVelocityButton);
 
         // Add the menu panel to the frame
         frame.add(menuPanel, BorderLayout.WEST);
@@ -108,49 +134,9 @@ public class Main {
             System.out.println("You are not authorized to use this function");
         } else {
             System.out.println("\n\n\n");
-            System.out.println("Software version: Alpha 1.0.1");
+            System.out.println("Software version: Alpha 1.0.3");
             System.out.println("By Francesco Serangeli");
             System.out.println("This software is protected by GPLv3");
         }
-    }
-}
-
-class PhysicsCalculator {
-    private JLabel resultLabel; // Add a field for resultLabel
-
-    public PhysicsCalculator(JLabel resultLabel) {
-        this.resultLabel = resultLabel;
-    }
-
-    public void calculateMaxHeightParabolic(double initialSpeed) {
-        double T = (2 * initialSpeed) / 9.8;
-        double hmax = 0.5 * (9.8 * T * T) + (initialSpeed * T);
-        System.out.println("Calculation Result:");
-        System.out.println("-----------------------------");
-        System.out.printf("Maximum Height:\t%.2f meters%n", hmax);
-        System.out.println("-----------------------------");
-        resultLabel.setText("Maximum Height: " + String.format("%.2f", hmax) + " meters");
-    }
-
-    public void calculateFinalVelocity(double initialVelocity) {
-        double acceleration = 9.8; // Assuming constant acceleration of gravity
-        double time = 1.0; // You can change this value as needed
-        double finalVelocity = initialVelocity + (acceleration * time);
-        System.out.println("Calculation Result:");
-        System.out.println("-----------------------------");
-        System.out.printf("Final Velocity:\t%.2f meters per second%n", finalVelocity);
-        System.out.println("-----------------------------");
-        resultLabel.setText("Final Velocity: " + String.format("%.2f", finalVelocity) + " meters per second");
-    }
-
-    public void calculateDisplacement(double initialVelocity) {
-        double acceleration = 9.8; // Assuming constant acceleration of gravity
-        double time = 1.0; // You can change this value as needed
-        double displacement = initialVelocity * time + 0.5 * acceleration * time * time;
-        System.out.println("Calculation Result:");
-        System.out.println("-----------------------------");
-        System.out.printf("Displacement:\t%.2f meters%n", displacement);
-        System.out.println("-----------------------------");
-        resultLabel.setText("Displacement: " + String.format("%.2f", displacement) + " meters");
     }
 }
